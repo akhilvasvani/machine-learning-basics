@@ -70,10 +70,10 @@ class Regression(object):
         for i in range(self.n_iterations):
             y_pred = X.dot(self.w)
             # Calculate l2 loss
-            mse = np.mean(0.5 * (y - y_pred)**2 + self.regularization(self.w))
+            mse = np.mean(0.5 * (y - y_pred)**2) + self.regularization(self.w)
             self.training_errors.append(mse)
             # Gradient of l2 loss w.r.t w
-            grad_w = -(y - y_pred).dot(X) + self.regularization.grad(self.w)
+            grad_w = np.mean(-(y - y_pred).dot(X)) + self.regularization.grad(self.w)
             # Update the weights
             self.w -= self.learning_rate * grad_w
 
