@@ -63,5 +63,17 @@ Also added in example scripts using the sklearn libraries
 # Resouces
 Added in lots of resource for learning Machine Learning
 
+[OpenML](https://www.openml.org/home)
+
+[Bias-Variance-Tradeoff](https://elitedatascience.com/bias-variance-tradeoff)
+
+[Dimensionality Reduction Algorithms: Strengths and Weaknesses](https://elitedatascience.com/dimensionality-reduction-algorithms)
+
+[Python for Data Science](https://elitedatascience.com/learn-python-for-data-science)
+
+[Python Quickstart Guide for Data Science](https://elitedatascience.com/python-quickstart)
+
+[9 Mistakes to Avoid When Starting Career in Data Science](https://elitedatascience.com/beginner-mistakes)
+
 # References
 Thank you Erik Linder-Noren (https://github.com/eriklindernoren/ML-From-Scratch) for you intuition, code, and findings.
