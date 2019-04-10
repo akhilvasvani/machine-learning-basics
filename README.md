@@ -75,5 +75,7 @@ Added in lots of resource for learning Machine Learning
 
 [9 Mistakes to Avoid When Starting Career in Data Science](https://elitedatascience.com/beginner-mistakes)
 
+[The Hitchhiker’s Guide to Machine Learning in Python](https://medium.freecodecamp.org/the-hitchhikers-guide-to-machine-learning-algorithms-in-python-bfad66adb378)
+
 # References
 Thank you Erik Linder-Noren (https://github.com/eriklindernoren/ML-From-Scratch) for you intuition, code, and findings.
