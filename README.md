@@ -9,7 +9,8 @@ but rather to present the inner workings of them in a clear and accessible way.
 
 # Confidence Intervals 
 
-Added in a Study Guide about basic statistcs using point estimators, confidence intervals, and such. (More Examples)[http://stat.math.uregina.ca/~kozdron/Teaching/Regina/252Winter16/Handouts/ch3.pdf] 
+Added in a Study Guide about basic statistcs using point estimators, confidence intervals, and such. 
+[More Examples](http://stat.math.uregina.ca/~kozdron/Teaching/Regina/252Winter16/Handouts/ch3.pdf) 
 
 # Support Vectors
 
