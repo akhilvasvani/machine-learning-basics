@@ -78,5 +78,9 @@ Added in lots of resource for learning Machine Learning
 
 [The Hitchhiker’s Guide to Machine Learning in Python](https://medium.freecodecamp.org/the-hitchhikers-guide-to-machine-learning-algorithms-in-python-bfad66adb378)
 
+# Python Resources
+
+[Python ML Cheatsheat](https://ml-cheatsheet.readthedocs.io/en/latest/probability.html)
+
 # References
 Thank you Erik Linder-Noren (https://github.com/eriklindernoren/ML-From-Scratch) for you intuition, code, and findings.
