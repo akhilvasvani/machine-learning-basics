@@ -60,6 +60,14 @@ Also added in example scripts using the sklearn libraries
 
 [Cross-Validation in Machine Learning](https://towardsdatascience.com/cross-validation-in-machine-learning-72924a69872f)
 
+# Gradient Descent Resources
+[Introduction to Gradient Descent Algorithm (along with variants) in Machine Learning](https://www.analyticsvidhya.com/blog/2017/03/introduction-to-gradient-descent-algorithm-along-its-variants/)
+
+[Paper: An overview of gradient descent optimization algorithms](https://arxiv.org/pdf/1609.04747.pdf)
+
+# Regression Resources
+
+[A comprehensive beginners guide for Linear, Ridge and Lasso Regression](https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/)
 
 # Resouces
 Added in lots of resource for learning Machine Learning
