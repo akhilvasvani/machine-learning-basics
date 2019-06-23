@@ -90,5 +90,7 @@ Added in lots of resource for learning Machine Learning
 
 [Python ML Cheatsheat](https://ml-cheatsheet.readthedocs.io/en/latest/probability.html)
 
+[Python Machine Learning: Scikit-Learn Tutorial](https://www.datacamp.com/community/tutorials/machine-learning-python)
+
 # References
 Thank you Erik Linder-Noren (https://github.com/eriklindernoren/ML-From-Scratch) for you intuition, code, and findings.
