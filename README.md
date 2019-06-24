@@ -65,9 +65,11 @@ Also added in example scripts using the sklearn libraries
 
 [Paper: An overview of gradient descent optimization algorithms](https://arxiv.org/pdf/1609.04747.pdf)
 
-# Regression Resources
+# Regularization Resources
 
-[A comprehensive beginners guide for Linear, Ridge and Lasso Regression](https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/)
+[A comprehensive beginners guide for Linear Regression, Ridge and Lasso Regularization](https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/)
+
+[Regularization in Machine Learning](https://towardsdatascience.com/regularization-in-machine-learning-76441ddcf99a)
 
 # Resouces
 Added in lots of resource for learning Machine Learning
