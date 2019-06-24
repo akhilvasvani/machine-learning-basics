@@ -71,6 +71,8 @@ Also added in example scripts using the sklearn libraries
 
 [Regularization in Machine Learning](https://towardsdatascience.com/regularization-in-machine-learning-76441ddcf99a)
 
+[Least-squares fitting using matrix derivatives](https://mec560sbu.github.io/2016/08/29/Least_SQ_Fitting/)
+
 # Resouces
 Added in lots of resource for learning Machine Learning
 
