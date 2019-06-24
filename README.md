@@ -96,5 +96,7 @@ Added in lots of resource for learning Machine Learning
 
 [Python Machine Learning: Scikit-Learn Tutorial](https://www.datacamp.com/community/tutorials/machine-learning-python)
 
+[Learning Python for Machine Learning Tutorial](http://www.thelearningpoint.net/computer-science/python-for-data-11-mlp-classifier-in-python-multi-layer-perceptron) -- follow the links below
+
 # References
 Thank you Erik Linder-Noren (https://github.com/eriklindernoren/ML-From-Scratch) for you intuition, code, and findings.
