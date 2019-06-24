@@ -98,5 +98,9 @@ Added in lots of resource for learning Machine Learning
 
 [Learning Python for Machine Learning Tutorial](http://www.thelearningpoint.net/computer-science/python-for-data-11-mlp-classifier-in-python-multi-layer-perceptron) -- follow the links below
 
+# Practice Questions
+
+[Interview Questions](https://medium.com/subhrajit-roy/cracking-the-machine-learning-interview-1d8c5bb752d8)
+
 # References
 Thank you Erik Linder-Noren (https://github.com/eriklindernoren/ML-From-Scratch) for you intuition, code, and findings.
