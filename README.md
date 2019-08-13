@@ -9,7 +9,8 @@ but rather to present the inner workings of them in a clear and accessible way.
 
 # Confidence Intervals 
 
-Added in a Study Guide about basic statistcs using point estimators, confidence intervals, and such. (More Examples)[http://stat.math.uregina.ca/~kozdron/Teaching/Regina/252Winter16/Handouts/ch3.pdf] 
+Added in a Study Guide about basic statistcs using point estimators, confidence intervals, and such. 
+[More Examples](http://stat.math.uregina.ca/~kozdron/Teaching/Regina/252Winter16/Handouts/ch3.pdf) 
 
 # Support Vectors
 
@@ -59,6 +60,18 @@ Also added in example scripts using the sklearn libraries
 
 [Cross-Validation in Machine Learning](https://towardsdatascience.com/cross-validation-in-machine-learning-72924a69872f)
 
+# Gradient Descent Resources
+[Introduction to Gradient Descent Algorithm (along with variants) in Machine Learning](https://www.analyticsvidhya.com/blog/2017/03/introduction-to-gradient-descent-algorithm-along-its-variants/)
+
+[Paper: An overview of gradient descent optimization algorithms](https://arxiv.org/pdf/1609.04747.pdf)
+
+# Regularization Resources
+
+[A comprehensive beginners guide for Linear Regression, Ridge and Lasso Regularization](https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/)
+
+[Regularization in Machine Learning](https://towardsdatascience.com/regularization-in-machine-learning-76441ddcf99a)
+
+[Least-squares fitting using matrix derivatives](https://mec560sbu.github.io/2016/08/29/Least_SQ_Fitting/)
 
 # Resouces
 Added in lots of resource for learning Machine Learning
@@ -74,6 +87,20 @@ Added in lots of resource for learning Machine Learning
 [Python Quickstart Guide for Data Science](https://elitedatascience.com/python-quickstart)
 
 [9 Mistakes to Avoid When Starting Career in Data Science](https://elitedatascience.com/beginner-mistakes)
+
+[The Hitchhiker’s Guide to Machine Learning in Python](https://medium.freecodecamp.org/the-hitchhikers-guide-to-machine-learning-algorithms-in-python-bfad66adb378)
+
+# Python Resources
+
+[Python ML Cheatsheat](https://ml-cheatsheet.readthedocs.io/en/latest/probability.html)
+
+[Python Machine Learning: Scikit-Learn Tutorial](https://www.datacamp.com/community/tutorials/machine-learning-python)
+
+[Learning Python for Machine Learning Tutorial](http://www.thelearningpoint.net/computer-science/python-for-data-11-mlp-classifier-in-python-multi-layer-perceptron) -- follow the links below
+
+# Practice Questions
+
+[Interview Questions](https://medium.com/subhrajit-roy/cracking-the-machine-learning-interview-1d8c5bb752d8)
 
 # References
 Thank you Erik Linder-Noren (https://github.com/eriklindernoren/ML-From-Scratch) for you intuition, code, and findings.
