@@ -49,7 +49,8 @@ def main():
             lowest_error = mse
 
     # Make final prediction
-    model = PolynomialRidgeRegression(degree=poly_degree, reg_factor=best_reg_factor, learning_rate=0.001, n_iterations=10000)
+    model = PolynomialRidgeRegression(degree=poly_degree, reg_factor=best_reg_factor, learning_rate=0.001,
+                                      n_iterations=10000)
     model.fit(X_train, y_train)
 
     y_pred = model.predict(X_test)

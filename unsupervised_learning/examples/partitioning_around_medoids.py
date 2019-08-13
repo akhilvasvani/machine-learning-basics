@@ -5,6 +5,7 @@ import numpy as np
 from mlfromscratch.utils import Plot
 from mlfromscratch.unsupervised_learning import PAM
 
+
 def main():
     # Load the dataset
     X, y = datasets.make_blobs()

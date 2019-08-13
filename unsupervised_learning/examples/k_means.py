@@ -20,6 +20,5 @@ def main():
     p.plot_in_2d(X, y, title="Actual Clustering")
 
 
-
 if __name__ == "__main__":
     main()

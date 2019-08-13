@@ -4,6 +4,7 @@ import numpy as np
 from mlfromscratch.utils import train_test_split, normalize, accuracy_score, Plot
 from mlfromscratch.supervised_learning import NaiveBayes
 
+
 def main():
     data = datasets.load_digits()
     X = normalize(data.data)
@@ -17,10 +18,11 @@ def main():
 
     accuracy = accuracy_score(y_test, y_pred)
 
-    print ("Accuracy:", accuracy)
+    print("Accuracy:", accuracy)
 
     # Reduce dimension to two using PCA and plot the results
     Plot().plot_in_2d(X_test, y_pred, title="Naive Bayes", accuracy=accuracy, legend_labels=data.target_names)
+
 
 if __name__ == "__main__":
     main()
