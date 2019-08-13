@@ -20,10 +20,10 @@ class Neuroevolution():
         self.mutation_rate = mutation_rate
         self.model_builder = model_builder
 
-    def _build_model(self, id):
+    def _build_model(self, id_num):
         """ Returns a new individual """
         model = self.model_builder(n_inputs=self.X.shape[1], n_outputs=self.y.shape[1])
-        model.id = id
+        model.id = id_num
         model.fitness = 0
         model.accuracy = 0
         
@@ -33,7 +33,7 @@ class Neuroevolution():
         """ Initialization of the neural networks forming the population"""
         self.population = []
         for _ in range(self.population_size):
-            model = self._build_model(id=np.random.randint(1000))
+            model = self._build_model(id_num=np.random.randint(1000))
             self.population.append(model)
 
     def _mutate(self, individual, var=1):
@@ -104,9 +104,8 @@ class Neuroevolution():
 
             # Get the individual with the highest fitness
             fittest_individual = self.population[0]
-            print("[%d Best Individual - Fitness: %.5f, Accuracy: %.1f%%]" % (epoch,
-                                                                        fittest_individual.fitness, 
-                                                                        float(100*fittest_individual.accuracy)))
+            print("[%d Best Individual - Fitness: %.5f, Accuracy: %.1f%%]" % (epoch, fittest_individual.fitness,
+                                                                              float(100*fittest_individual.accuracy)))
             # The 'winners' are selected for the next generation
             next_population = [self.population[i] for i in range(n_winners)]
 

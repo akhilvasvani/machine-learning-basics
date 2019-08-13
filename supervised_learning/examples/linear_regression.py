@@ -7,6 +7,7 @@ from mlfromscratch.utils import train_test_split, polynomial_features
 from mlfromscratch.utils import mean_squared_error, Plot
 from mlfromscratch.supervised_learning import LinearRegression
 
+
 def main():
 
     X, y = make_regression(n_samples=100, n_features=1, noise=20)
@@ -30,7 +31,7 @@ def main():
 
     y_pred = model.predict(X_test)
     mse = mean_squared_error(y_test, y_pred)
-    print ("Mean squared error: %s" % (mse))
+    print("Mean squared error: {}".format(mse))
 
     y_pred_line = model.predict(X)
 
@@ -47,6 +48,7 @@ def main():
     plt.ylabel('Temperature in Celcius')
     plt.legend((m1, m2), ("Training data", "Test data"), loc='lower right')
     plt.show()
+
 
 if __name__ == "__main__":
     main()

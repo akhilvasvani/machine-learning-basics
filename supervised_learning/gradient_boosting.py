@@ -56,7 +56,6 @@ class GradientBoosting(object):
                     max_depth=self.max_depth)
             self.trees.append(tree)
 
-
     def fit(self, X, y):
         y_pred = np.full(np.shape(y), np.mean(y, axis=0))
         for i in self.bar(range(self.n_estimators)):
@@ -65,7 +64,6 @@ class GradientBoosting(object):
             update = self.trees[i].predict(X)
             # Update y prediction
             y_pred -= np.multiply(self.learning_rate, update)
-
 
     def predict(self, X):
         y_pred = np.array([])
@@ -86,24 +84,18 @@ class GradientBoosting(object):
 class GradientBoostingRegressor(GradientBoosting):
     def __init__(self, n_estimators=200, learning_rate=0.5, min_samples_split=2,
                  min_var_red=1e-7, max_depth=4, debug=False):
-        super(GradientBoostingRegressor, self).__init__(n_estimators=n_estimators, 
-            learning_rate=learning_rate, 
-            min_samples_split=min_samples_split, 
-            min_impurity=min_var_red,
-            max_depth=max_depth,
-            regression=True)
+        super(GradientBoostingRegressor, self).__init__(n_estimators=n_estimators, learning_rate=learning_rate,
+                                                        min_samples_split=min_samples_split, min_impurity=min_var_red,
+                                                        max_depth=max_depth, regression=True)
+
 
 class GradientBoostingClassifier(GradientBoosting):
     def __init__(self, n_estimators=200, learning_rate=.5, min_samples_split=2,
                  min_info_gain=1e-7, max_depth=2, debug=False):
-        super(GradientBoostingClassifier, self).__init__(n_estimators=n_estimators, 
-            learning_rate=learning_rate, 
-            min_samples_split=min_samples_split, 
-            min_impurity=min_info_gain,
-            max_depth=max_depth,
-            regression=False)
+        super(GradientBoostingClassifier, self).__init__(n_estimators=n_estimators, learning_rate=learning_rate,
+                                                         min_samples_split=min_samples_split, min_impurity=min_info_gain,
+                                                         max_depth=max_depth, regression=False)
 
     def fit(self, X, y):
         y = to_categorical(y)
         super(GradientBoostingClassifier, self).fit(X, y)
-

@@ -5,6 +5,7 @@ import matplotlib.colors as colors
 import numpy as np
 from mlfromscratch.unsupervised_learning import PCA
 
+
 def main():
 
     # Demo of how to reduce the dimensionality of the data to two dimension

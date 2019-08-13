@@ -12,7 +12,7 @@ from mlfromscratch.supervised_learning import GradientBoostingRegressor
 
 
 def main():
-    print ("-- Gradient Boosting Regression --")
+    print("-- Gradient Boosting Regression --")
 
     # Load temperature data
     data = pd.read_csv('mlfromscratch/data/TempLinkoping2016.txt', sep="\t")
@@ -37,7 +37,7 @@ def main():
 
     mse = mean_squared_error(y_test, y_pred)
 
-    print ("Mean Squared Error:", mse)
+    print("Mean Squared Error:", mse)
 
     # Plot the results
     m1 = plt.scatter(366 * X_train[:, 1], y_train, color=cmap(0.9), s=10)

@@ -9,6 +9,7 @@ from mlfromscratch.deep_learning.activation_functions import Sigmoid
 from mlfromscratch.utils import Plot
 from mlfromscratch.supervised_learning import LogisticRegression
 
+
 def main():
     # Load dataset
     data = datasets.load_iris()
@@ -24,10 +25,11 @@ def main():
     y_pred = clf.predict(X_test)
 
     accuracy = accuracy_score(y_test, y_pred)
-    print ("Accuracy:", accuracy)
+    print("Accuracy:", accuracy)
 
     # Reduce dimension to two using PCA and plot the results
     Plot().plot_in_2d(X_test, y_pred, title="Logistic Regression", accuracy=accuracy)
+
 
 if __name__ == "__main__":
     main()

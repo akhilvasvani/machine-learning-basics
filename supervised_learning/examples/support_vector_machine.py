@@ -7,6 +7,7 @@ from mlfromscratch.utils import train_test_split, normalize, accuracy_score, Plo
 from mlfromscratch.utils.kernels import *
 from mlfromscratch.supervised_learning import SupportVectorMachine
 
+
 def main():
     data = datasets.load_iris()
     X = normalize(data.data[data.target != 0])

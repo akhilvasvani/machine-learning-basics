@@ -11,9 +11,11 @@ from mlfromscratch.deep_learning.layers import Activation, Dense
 from mlfromscratch.deep_learning.loss_functions import CrossEntropy
 from mlfromscratch.deep_learning.optimizers import Adam
 
+
 def main():
 
-    X, y = datasets.make_classification(n_samples=1000, n_features=10, n_classes=4, n_clusters_per_class=1, n_informative=2)
+    X, y = datasets.make_classification(n_samples=1000, n_features=10, n_classes=4, n_clusters_per_class=1,
+                                        n_informative=2)
 
     data = datasets.load_iris()
     X = normalize(data.data)
@@ -31,7 +33,7 @@ def main():
         return model
 
     # Print the model summary of a individual in the population
-    print ("")
+    print("")
     model_builder(n_inputs=X.shape[1], n_outputs=y.shape[1]).summary()
 
     population_size = 100
@@ -43,30 +45,28 @@ def main():
     cognitive_weight = 0.8
     social_weight = 0.8
 
-    print ("Population Size: %d" % population_size)
-    print ("Generations: %d" % n_generations)
-    print ("")
-    print ("Inertia Weight: %.2f" % inertia_weight)
-    print ("Cognitive Weight: %.2f" % cognitive_weight)
-    print ("Social Weight: %.2f" % social_weight)
-    print ("")
+    print("Population Size: %d" % population_size)
+    print("Generations: %d" % n_generations)
+    print("")
+    print("Inertia Weight: %.2f" % inertia_weight)
+    print("Cognitive Weight: %.2f" % cognitive_weight)
+    print("Social Weight: %.2f" % social_weight)
+    print("")
 
-    model = ParticleSwarmOptimizedNN(population_size=population_size, 
-                        inertia_weight=inertia_weight,
-                        cognitive_weight=cognitive_weight,
-                        social_weight=social_weight,
-                        max_velocity=5,
-                        model_builder=model_builder)
+    model = ParticleSwarmOptimizedNN(population_size=population_size, inertia_weight=inertia_weight,
+                                     cognitive_weight=cognitive_weight, social_weight=social_weight, max_velocity=5,
+                                     model_builder=model_builder)
     
     model = model.evolve(X_train, y_train, n_generations=n_generations)
 
     loss, accuracy = model.test_on_batch(X_test, y_test)
 
-    print ("Accuracy: %.1f%%" % float(100*accuracy))
+    print("Accuracy: %.1f%%" % float(100*accuracy))
 
     # Reduce dimension to 2D using PCA and plot the results
     y_pred = np.argmax(model.predict(X_test), axis=1)
-    Plot().plot_in_2d(X_test, y_pred, title="Particle Swarm Optimized Neural Network", accuracy=accuracy, legend_labels=range(y.shape[1]))
+    Plot().plot_in_2d(X_test, y_pred, title="Particle Swarm Optimized Neural Network", accuracy=accuracy,
+                      legend_labels=range(y.shape[1]))
 
 
 if __name__ == "__main__":

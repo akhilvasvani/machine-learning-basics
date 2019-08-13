@@ -2,6 +2,7 @@ from __future__ import print_function, division
 import numpy as np
 import copy
 
+
 class ParticleSwarmOptimizedNN():
     """ Particle Swarm Optimization of Neural Network.
 
@@ -21,12 +22,8 @@ class ParticleSwarmOptimizedNN():
         Neural Network Training Using Particle Swarm Optimization
         https://visualstudiomagazine.com/articles/2013/12/01/neural-network-training-using-particle-swarm-optimization.aspx 
     """
-    def __init__(self, population_size, 
-                        model_builder, 
-                        inertia_weight=0.8, 
-                        cognitive_weight=2, 
-                        social_weight=2, 
-                        max_velocity=20):
+    def __init__(self, population_size, model_builder, inertia_weight=0.8, cognitive_weight=2, social_weight=2,
+                 max_velocity=20):
         self.population_size = population_size
         self.model_builder = model_builder
         self.best_individual = None
@@ -37,10 +34,10 @@ class ParticleSwarmOptimizedNN():
         self.min_v = -max_velocity
         self.max_v = max_velocity
 
-    def _build_model(self, id):
+    def _build_model(self, id_num):
         """ Returns a new individual """
         model = self.model_builder(n_inputs=self.X.shape[1], n_outputs=self.y.shape[1])
-        model.id = id
+        model.id = id_num
         model.fitness = 0
         model.highest_fitness = 0
         model.accuracy = 0
@@ -61,7 +58,7 @@ class ParticleSwarmOptimizedNN():
         """ Initialization of the neural networks forming the population"""
         self.population = []
         for i in range(self.population_size):
-            model = self._build_model(id=i)
+            model = self._build_model(id_num=i)
             self.population.append(model)
 
     def _update_weights(self, individual):
