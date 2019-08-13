@@ -8,6 +8,7 @@ from mlfromscratch.deep_learning.activation_functions import Sigmoid
 
 sigmoid = Sigmoid()
 
+
 class RBM():
     """Bernoulli Restricted Boltzmann Machine (RBM)
 
@@ -40,7 +41,7 @@ class RBM():
         self.h0 = np.zeros(self.n_hidden)   # Bias hidden
 
     def fit(self, X, y=None):
-        '''Contrastive Divergence training procedure'''
+        """ Contrastive Divergence training procedure """
 
         self._initialize_weights(X)
 
@@ -60,7 +61,7 @@ class RBM():
                 negative_hidden = sigmoid(negative_visible.dot(self.W) + self.h0)
                 negative_associations = negative_visible.T.dot(negative_hidden)
 
-                self.W  += self.lr * (positive_associations - negative_associations)
+                self.W += self.lr * (positive_associations - negative_associations)
                 self.h0 += self.lr * (positive_hidden.sum(axis=0) - negative_hidden.sum(axis=0))
                 self.v0 += self.lr * (batch.sum(axis=0) - negative_visible.sum(axis=0))
 
@@ -79,4 +80,3 @@ class RBM():
         hidden_states = self._sample(positive_hidden)
         negative_visible = sigmoid(hidden_states.dot(self.W.T) + self.v0)
         return negative_visible
-

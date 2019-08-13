@@ -3,6 +3,7 @@ import numpy as np
 from mlfromscratch.utils import normalize, euclidean_distance, Plot
 from mlfromscratch.unsupervised_learning import *
 
+
 class KMeans():
     """A simple clustering method that forms k clusters by iteratively reassigning
     samples to the closest centroids and after that moves the centroids to the center
@@ -88,4 +89,3 @@ class KMeans():
                 break
 
         return self._get_cluster_labels(clusters, X)
-

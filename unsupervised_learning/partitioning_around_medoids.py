@@ -70,7 +70,7 @@ class PAM():
         """ Classify samples as the index of their clusters """
         # One prediction for each sample
         y_pred = np.zeros(np.shape(X)[0])
-        for cluster_i in range(len(clusters)):
+        for cluster_i, item in enumerate(clusters):
             cluster = clusters[cluster_i]
             for sample_i in cluster:
                 y_pred[sample_i] = cluster_i
@@ -120,4 +120,3 @@ class PAM():
         final_clusters = self._create_clusters(X, medoids)
         # Return the samples cluster indices as labels
         return self._get_cluster_labels(final_clusters, X)
-

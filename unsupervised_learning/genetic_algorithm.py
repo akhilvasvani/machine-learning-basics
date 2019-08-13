@@ -2,6 +2,7 @@ from __future__ import print_function, division
 import string
 import numpy as np
 
+
 class GeneticAlgorithm():
     """An implementation of a Genetic Algorithm which will try to produce the user
     specified target string.
@@ -37,7 +38,7 @@ class GeneticAlgorithm():
             # Calculate loss as the alphabetical distance between
             # the characters in the individual and the target string
             loss = 0
-            for i in range(len(individual)):
+            for i, item in range(len(individual)):
                 letter_i1 = self.letters.index(individual[i])
                 letter_i2 = self.letters.index(self.target[i])
                 loss += abs(letter_i1 - letter_i2)
@@ -49,7 +50,7 @@ class GeneticAlgorithm():
         """ Randomly change the individual's characters with probability
         self.mutation_rate """
         individual = list(individual)
-        for j in range(len(individual)):
+        for j, item in enumerate(individual):
             # Make change with probability mutation_rate
             if np.random.random() < self.mutation_rate:
                 individual[j] = np.random.choice(self.letters)
@@ -92,13 +93,7 @@ class GeneticAlgorithm():
                 # Save mutated offspring for next generation
                 new_population += [self._mutate(child1), self._mutate(child2)]
 
-            print ("[%d Closest Candidate: '%s', Fitness: %.2f]" % (epoch, fittest_individual, highest_fitness))
+            print("[%d Closest Candidate: '%s', Fitness: %.2f]" % (epoch, fittest_individual, highest_fitness))
             self.population = new_population
 
-        print ("[%d Answer: '%s']" % (epoch, fittest_individual))
-
-
-
-
-
-
+        print("[{:d} Answer: '{}']".format(epoch, fittest_individual))

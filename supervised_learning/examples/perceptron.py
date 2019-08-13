@@ -21,10 +21,7 @@ def main():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, seed=1)
 
     # Perceptron
-    clf = Perceptron(n_iterations=5000,
-        learning_rate=0.001, 
-        loss=CrossEntropy,
-        activation_function=Sigmoid)
+    clf = Perceptron(n_iterations=5000, learning_rate=0.001, loss=CrossEntropy, activation_function=Sigmoid)
     clf.fit(X_train, y_train)
 
     y_pred = np.argmax(clf.predict(X_test), axis=1)
@@ -32,7 +29,7 @@ def main():
 
     accuracy = accuracy_score(y_test, y_pred)
 
-    print ("Accuracy:", accuracy)
+    print("Accuracy:", accuracy)
 
     # Reduce dimension to two using PCA and plot the results
     Plot().plot_in_2d(X_test, y_pred, title="Perceptron", accuracy=accuracy, legend_labels=np.unique(y))

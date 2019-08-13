@@ -2,6 +2,7 @@ from __future__ import print_function, division
 import numpy as np
 import copy
 
+
 class Neuroevolution():
     """ Evolutionary optimization of Neural Networks.
 
@@ -103,7 +104,7 @@ class Neuroevolution():
 
             # Get the individual with the highest fitness
             fittest_individual = self.population[0]
-            print ("[%d Best Individual - Fitness: %.5f, Accuracy: %.1f%%]" % (epoch, 
+            print("[%d Best Individual - Fitness: %.5f, Accuracy: %.1f%%]" % (epoch,
                                                                         fittest_individual.fitness, 
                                                                         float(100*fittest_individual.accuracy)))
             # The 'winners' are selected for the next generation
@@ -123,4 +124,3 @@ class Neuroevolution():
             self.population = next_population
 
         return fittest_individual
-

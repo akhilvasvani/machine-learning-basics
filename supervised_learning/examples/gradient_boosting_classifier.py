@@ -9,9 +9,10 @@ from mlfromscratch.deep_learning.loss_functions import CrossEntropy
 from mlfromscratch.utils import Plot
 from mlfromscratch.supervised_learning import GradientBoostingClassifier
 
+
 def main():
 
-    print ("-- Gradient Boosting Classification --")
+    print("-- Gradient Boosting Classification --")
 
     data = datasets.load_iris()
     X = data.data
@@ -25,14 +26,9 @@ def main():
 
     accuracy = accuracy_score(y_test, y_pred)
 
-    print ("Accuracy:", accuracy)
+    print("Accuracy:", accuracy)
 
-
-    Plot().plot_in_2d(X_test, y_pred, 
-        title="Gradient Boosting", 
-        accuracy=accuracy, 
-        legend_labels=data.target_names)
-
+    Plot().plot_in_2d(X_test, y_pred, title="Gradient Boosting", accuracy=accuracy, legend_labels=data.target_names)
 
 
 if __name__ == "__main__":

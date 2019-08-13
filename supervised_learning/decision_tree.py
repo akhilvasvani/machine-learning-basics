@@ -4,6 +4,7 @@ import numpy as np
 from mlfromscratch.utils import divide_on_feature, train_test_split, standardize, mean_squared_error
 from mlfromscratch.utils import calculate_entropy, accuracy_score, calculate_variance
 
+
 class DecisionNode():
     """Class that represents a decision node or leaf in the decision tree
 
@@ -67,7 +68,7 @@ class DecisionTree(object):
         """ Build decision tree """
         self.one_dim = len(np.shape(y)) == 1
         self.root = self._build_tree(X, y)
-        self.loss=None
+        self.loss = None
 
     def _build_tree(self, X, y, current_depth=0):
         """ Recursive method which builds out the decision tree and splits X and respective y
@@ -100,7 +101,7 @@ class DecisionTree(object):
                     # meets the threshold
                     Xy1, Xy2 = divide_on_feature(Xy, feature_i, threshold)
 
-                    if len(Xy1) > 0 and len(Xy2) > 0:
+                    if Xy1.size > 0 and Xy2.size > 0:
                         # Select the y-values of the two sets
                         y1 = Xy1[:, n_features:]
                         y2 = Xy2[:, n_features:]
@@ -133,7 +134,6 @@ class DecisionTree(object):
 
         return DecisionNode(value=leaf_value)
 
-
     def predict_value(self, x, tree=None):
         """ Do a recursive search down the tree and make a prediction of the data sample by the
             value of the leaf that we end up at """
@@ -150,7 +150,7 @@ class DecisionTree(object):
 
         # Determine if we will follow left or right branch
         branch = tree.false_branch
-        if isinstance(feature_value, int) or isinstance(feature_value, float):
+        if isinstance(feature_value, (int, float)):
             if feature_value >= tree.threshold:
                 branch = tree.true_branch
         elif feature_value == tree.threshold:
@@ -171,18 +171,17 @@ class DecisionTree(object):
 
         # If we're at leaf => print the label
         if tree.value is not None:
-            print (tree.value)
+            print(tree.value)
         # Go deeper down the tree
         else:
             # Print test
-            print ("%s:%s? " % (tree.feature_i, tree.threshold))
+            print("{}:{}}? ".format(tree.feature_i, tree.threshold))
             # Print the true scenario
-            print ("%sT->" % (indent), end="")
+            print("%sT->" % (indent), end="")
             self.print_tree(tree.true_branch, indent + indent)
             # Print the false scenario
-            print ("%sF->" % (indent), end="")
+            print("%sF->" % (indent), end="")
             self.print_tree(tree.false_branch, indent + indent)
-
 
 
 class XGBoostRegressionTree(DecisionTree):
@@ -253,14 +252,13 @@ class RegressionTree(DecisionTree):
         self._leaf_value_calculation = self._mean_of_y
         super(RegressionTree, self).fit(X, y)
 
+
 class ClassificationTree(DecisionTree):
     def _calculate_information_gain(self, y, y1, y2):
         # Calculate information gain
         p = len(y1) / len(y)
         entropy = calculate_entropy(y)
-        info_gain = entropy - p * \
-            calculate_entropy(y1) - (1 - p) * \
-            calculate_entropy(y2)
+        info_gain = entropy - p * calculate_entropy(y1) - (1 - p) * calculate_entropy(y2)
 
         return info_gain
 

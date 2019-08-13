@@ -44,7 +44,7 @@ class ParticleSwarmOptimizedNN():
         model.fitness = 0
         model.highest_fitness = 0
         model.accuracy = 0
-        # Set intial best as the current initialization
+        # Set initial best as the current initialization
         model.best_layers = copy.copy(model.layers)
 
         # Set initial velocity to zero
@@ -121,9 +121,8 @@ class ParticleSwarmOptimizedNN():
                 if individual.fitness > self.best_individual.fitness:
                     self.best_individual = copy.copy(individual)
 
-            print ("[%d Best Individual - ID: %d Fitness: %.5f, Accuracy: %.1f%%]" % (epoch,
+            print("[%d Best Individual - ID: %d Fitness: %.5f, Accuracy: %.1f%%]" % (epoch,
                                                                             self.best_individual.id,
                                                                             self.best_individual.fitness,
                                                                             100*float(self.best_individual.accuracy)))
         return self.best_individual
-

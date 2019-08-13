@@ -15,11 +15,11 @@ from mlfromscratch.unsupervised_learning import PCA
 from mlfromscratch.deep_learning.layers import Dense, Dropout, Conv2D, Flatten, Activation
 
 
-print ("+-------------------------------------------+")
-print ("|                                           |")
-print ("|       Machine Learning From Scratch       |")
-print ("|                                           |")
-print ("+-------------------------------------------+")
+print("+-------------------------------------------+")
+print("|                                           |")
+print("|       Machine Learning From Scratch       |")
+print("|                                           |")
+print("+-------------------------------------------+")
 
 
 # ...........
@@ -36,13 +36,13 @@ y[y == digit2] = 1
 X = data.data[idx]
 X = normalize(X)
 
-print ("Dataset: The Digit Dataset (digits %s and %s)" % (digit1, digit2))
+print("Dataset: The Digit Dataset (digits %s and %s)" % (digit1, digit2))
 
 # ..........................
 #  DIMENSIONALITY REDUCTION
 # ..........................
 pca = PCA()
-X = pca.transform(X, n_components=5) # Reduce to 5 dimensions
+X = pca.transform(X, n_components=5)  # Reduce to 5 dimensions
 
 n_samples, n_features = np.shape(X)
 
@@ -80,28 +80,28 @@ xgboost = XGBoost(n_estimators=50, learning_rate=0.5)
 # ........
 #  TRAIN
 # ........
-print ("Training:")
-print ("- Adaboost")
+print("Training:")
+print("- Adaboost")
 adaboost.fit(X_train, rescaled_y_train)
-print ("- Decision Tree")
+print("- Decision Tree")
 decision_tree.fit(X_train, y_train)
-print ("- Gradient Boosting")
+print("- Gradient Boosting")
 gbc.fit(X_train, y_train)
-print ("- LDA")
+print("- LDA")
 lda.fit(X_train, y_train)
-print ("- Logistic Regression")
+print("- Logistic Regression")
 logistic_regression.fit(X_train, y_train)
-print ("- Multilayer Perceptron")
+print("- Multilayer Perceptron")
 mlp.fit(X_train, to_categorical(y_train), n_epochs=300, batch_size=50)
-print ("- Naive Bayes")
+print("- Naive Bayes")
 naive_bayes.fit(X_train, y_train)
-print ("- Perceptron")
+print("- Perceptron")
 perceptron.fit(X_train, to_categorical(y_train))
-print ("- Random Forest")
+print("- Random Forest")
 random_forest.fit(X_train, y_train)
-print ("- Support Vector Machine")
+print("- Support Vector Machine")
 support_vector_machine.fit(X_train, rescaled_y_train)
-print ("- XGBoost")
+print("- XGBoost")
 xgboost.fit(X_train, y_train)
 
 
@@ -126,22 +126,20 @@ y_pred["XGBoost"] = xgboost.predict(X_test)
 # ..........
 #  ACCURACY
 # ..........
-print ("Accuracy:")
+print("Accuracy:")
 for clf in y_pred:
     # Rescaled {-1 1}
     if clf == "Adaboost" or clf == "Support Vector Machine":
-        print ("\t%-23s: %.5f" %(clf, accuracy_score(rescaled_y_test, y_pred[clf])))
+        print("\t%-23s: %.5f" % (clf, accuracy_score(rescaled_y_test, y_pred[clf])))
     # Categorical
     else:
-        print ("\t%-23s: %.5f" %(clf, accuracy_score(y_test, y_pred[clf])))
+        print("\t%-23s: %.5f" % (clf, accuracy_score(y_test, y_pred[clf])))
 
 # .......
 #  PLOT
 # .......
-plt.scatter(X_test[:,0], X_test[:,1], c=y_test)
+plt.scatter(X_test[:, 0], X_test[:, 1], c=y_test)
 plt.ylabel("Principal Component 2")
 plt.xlabel("Principal Component 1")
 plt.title("The Digit Dataset (digits %s and %s)" % (digit1, digit2))
 plt.show()
-
-

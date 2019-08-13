@@ -8,6 +8,7 @@ from mlfromscratch.utils.data_manipulation import train_test_split
 from mlfromscratch.utils.data_operation import accuracy_score
 from mlfromscratch.utils import Plot
 
+
 def main():
     data = datasets.load_digits()
     X = data.data

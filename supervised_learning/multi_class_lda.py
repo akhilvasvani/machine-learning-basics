@@ -62,7 +62,6 @@ class MultiClassLDA():
 
         return X_transformed
 
-
     def plot_in_2d(self, X, y, title=None):
         """ Plot the dataset X and the corresponding labels y in 2D using the LDA
         transformation."""
@@ -70,5 +69,6 @@ class MultiClassLDA():
         x1 = X_transformed[:, 0]
         x2 = X_transformed[:, 1]
         plt.scatter(x1, x2, c=y)
-        if title: plt.title(title)
+        if title:
+            plt.title(title)
         plt.show()

@@ -43,7 +43,6 @@ class FPGrowth():
         support = count
         return support
 
-
     def _get_frequent_items(self, transactions):
         """ Returns a set of frequent items. An item is determined to
         be frequent if there are atleast min_sup transactions that contains
@@ -106,16 +105,14 @@ class FPGrowth():
             child = node.children[child_key]
             self.print_tree(child, indent_times + 1)
 
-
     def _is_prefix(self, itemset, node):
         """ Makes sure that the first item in itemset is a child of node 
         and that every following item in itemset is reachable via that path """
         for item in itemset:
-            if not item in node.children:
+            if item not in node.children:
                 return False
             node = node.children[item]
         return True
-
 
     def _determine_prefixes(self, itemset, node, prefixes=None):
         """ Recursive method that adds prefixes to the itemset by traversing the 
@@ -127,7 +124,7 @@ class FPGrowth():
         # add the current prefixes value as prefix to the itemset
         if self._is_prefix(itemset, node):
             itemset_key = self._get_itemset_key(itemset)
-            if not itemset_key in self.prefixes:
+            if itemset_key not in self.prefixes:
                 self.prefixes[itemset_key] = []
             self.prefixes[itemset_key] += [{"prefix": prefixes, "support": node.children[itemset[0]].support}]
 
@@ -136,7 +133,6 @@ class FPGrowth():
             # Recursive call with child as new node. Add the child item as potential
             # prefix.
             self._determine_prefixes(itemset, child, prefixes + [child.item])
-
 
     def _get_itemset_key(self, itemset):
         """ Determines the look of the hashmap key for self.prefixes
@@ -188,10 +184,9 @@ class FPGrowth():
         # Build the FP Growth Tree
         self.tree_root = self._construct_tree(transactions)
         if show_tree:
-            print ("FP-Growth Tree:")
+            print("FP-Growth Tree:")
             self.print_tree(self.tree_root)
 
         self._determine_frequent_itemsets(transactions, suffix=None)
 
         return self.frequent_itemsets
-

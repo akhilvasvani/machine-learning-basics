@@ -14,6 +14,7 @@ bar_widgets = [
     ' ', progressbar.ETA()
 ]
 
+
 class Plot():
     def __init__(self): 
         self.cmap = plt.get_cmap('viridis')
@@ -29,7 +30,6 @@ class Plot():
         X_transformed = X.dot(eigenvectors)
 
         return X_transformed
-
 
     def plot_regression(self, lines, title, axis_labels=None, mse=None, scatter=None, legend={"type": "lines", "loc": "lower right"}):
         
@@ -60,8 +60,6 @@ class Plot():
             plt.legend(scatter_plots, scatter_labels, loc=legend["loc"])
 
         plt.show()
-
-
 
     # Plot the dataset X and the corresponding labels y in 2D using PCA.
     def plot_in_2d(self, X, y=None, title=None, accuracy=None, legend_labels=None):
@@ -110,5 +108,3 @@ class Plot():
         ax = fig.add_subplot(111, projection='3d')
         ax.scatter(x1, x2, x3, c=y)
         plt.show()
-
-

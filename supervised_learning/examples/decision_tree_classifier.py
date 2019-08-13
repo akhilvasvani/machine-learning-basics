@@ -10,9 +10,10 @@ from mlfromscratch.utils import train_test_split, standardize, accuracy_score
 from mlfromscratch.utils import mean_squared_error, calculate_variance, Plot
 from mlfromscratch.supervised_learning import ClassificationTree
 
+
 def main():
 
-    print ("-- Classification Tree --")
+    print("-- Classification Tree --")
 
     data = datasets.load_iris()
     X = data.data
@@ -28,10 +29,7 @@ def main():
 
     print ("Accuracy:", accuracy)
 
-    Plot().plot_in_2d(X_test, y_pred, 
-        title="Decision Tree", 
-        accuracy=accuracy, 
-        legend_labels=data.target_names)
+    Plot().plot_in_2d(X_test, y_pred, title="Decision Tree", accuracy=accuracy, legend_labels=data.target_names)
 
 
 if __name__ == "__main__":
