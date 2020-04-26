@@ -103,4 +103,4 @@ Added in lots of resource for learning Machine Learning
 [Interview Questions](https://medium.com/subhrajit-roy/cracking-the-machine-learning-interview-1d8c5bb752d8)
 
 # References
-Thank you Erik Linder-Noren (https://github.com/eriklindernoren/ML-From-Scratch) for you intuition, code, and findings.
+Thank you [Erik Linder-Noren](https://github.com/eriklindernoren/ML-From-Scratch) for your intuition, code, and findings.
